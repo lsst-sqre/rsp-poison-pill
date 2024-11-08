@@ -37,7 +37,6 @@ launch-rubin-jupyterlab = "lsst.rsp.startup.cli:main"
 [project.optional-dependencies]
 dev = [
     # Testing
-    "coverage[toml]",
     "pytest",
     "mypy",
 ]
@@ -78,28 +77,6 @@ exclude = '''
 '''
 # Use single-quoted strings so TOML treats the string like a Python r-string
 #  Multi-line strings are implicitly treated by black as regular expressions
-
-[tool.coverage.run]
-parallel = true
-branch = true
-source = ["lsst"]
-
-[tool.coverage.paths]
-source = ["src", ".tox/*/site-packages"]
-
-[tool.coverage.report]
-show_missing = true
-exclude_lines = [
-    "pragma: no cover",
-    "def __repr__",
-    "if self.debug:",
-    "if settings.DEBUG",
-    "raise AssertionError",
-    "raise NotImplementedError",
-    "if 0:",
-    "if __name__ == .__main__.:",
-    "if TYPE_CHECKING:"
-]
 
 [tool.mypy]
 disallow_untyped_defs = true

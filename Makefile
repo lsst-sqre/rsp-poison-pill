@@ -6,7 +6,7 @@ help:
 
 .PHONY: clean
 clean:
-	rm -rf .tox
+	rm -rf .tox .ruff_cache .mypy_cache
 
 .PHONY: init
 init:
